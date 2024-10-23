@@ -118,6 +118,8 @@ class NoticiaController extends Controller
         //         ->with('error', 'Caderno possui dependentes');
         // }
           $noticia = Noticia::find($id);
+
+
       
         $noticia->delete();
 
