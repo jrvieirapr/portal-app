@@ -5,8 +5,10 @@
     <!-- cabecalho -->
     <div>
         <h2>Noticias</h2>
+    <!-- route('admin.noticias.edit',$noticia) -->        
+    <!-- php artisan route:list -->        
         <a href="/admin/noticias/create"
-            class="btn btn-success">Novo</a>
+            class="btn btn-success" >Novo</a>
     </div>
     <!-- tabela -->
     <div class="table-responsive">
@@ -93,6 +95,5 @@
         var form = document.getElementById('deleteForm');
         form.action = "/admin/noticias/" + noticiaId;
     });
-
 </script>
 @endsection
