@@ -66,7 +66,7 @@
                 <select name="id_autor" id="id_autor"
                     class="form-select @error('id_autor') is-invalid @enderror">
                     <option selected disabled>Selecione um Autor.</option>
-                    @foreach($cadernos as $autor)
+                    @foreach($autores as $autor)
                     <option value="{{$autor->id}}"
                         {{old('id_autor') == $autor->id ? 'selected' : "" }}>
                         {{$autor->nome}}

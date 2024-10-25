@@ -21,9 +21,10 @@ class StoreNoticiaRequest extends FormRequest
      */
     public function rules(): array
     {
+  
         return [
             //
-            'data' => 'required|date',
+            'data' => 'required|date',            
             'titulo' =>'required|string|max:255',
             'subtitulo'=>'required|string|max:255',
             'texto' => 'required|string',
