@@ -19,11 +19,12 @@ use App\Models\TipoNegocio;
 use App\Models\TipoPontoTuristico;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
-Route::get('/',[SiteController::class,'admin'])
+
+Route::get('/',[SiteController::class,'portal'])
+->name('site.portal');
+
+Route::get('/admin',[SiteController::class,'admin'])
 ->name('site.admin');
 
 
