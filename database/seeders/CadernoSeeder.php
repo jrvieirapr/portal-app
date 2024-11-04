@@ -14,6 +14,6 @@ class CadernoSeeder extends Seeder
     public function run(): void
     {
         //
-        Caderno::factory(10)->create();
+        Caderno::factory(6)->create();
     }
 }

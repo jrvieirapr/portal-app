@@ -27,6 +27,21 @@ Route::get('/',[SiteController::class,'portal'])
 Route::get('/admin',[SiteController::class,'admin'])
 ->name('site.admin');
 
+Route::get('/site/sobre',[SiteController::class,'sobre'])
+->name('site.sobre');
+
+Route::get('/site/contato',[SiteController::class,'contato'])
+->name('site.contato');
+
+Route::get('/site/cadernos',[SiteController::class,'cadernos'])
+->name('site.cadernos');
+
+Route::post('/site/noticias/pesquisa',[SiteController::class,'pesquisarNoticias'])
+->name('site.pesquisarNoticias');
+
+Route::get('/site/noticias/caderno/{id}',[SiteController::class,'noticiasPorCaderno'])
+->name('site.noticiasporcaderno');
+
 
 //GET: requisicao via URL
 //POST: requisição via cabecalho da request

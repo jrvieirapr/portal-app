@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Caderno;
 use App\Models\Noticia;
 use Illuminate\Http\Request;
 
@@ -17,11 +18,46 @@ class SiteController extends Controller
     public function portal()
     {
 
-        // ultimas 5 noticias 
-        $ultimasNoticias = Noticia::orderBy('created_at', 'desc')
-                          ->take(5)
-                          ->get();
 
-        return view('home', compact('ultimasNoticias'));
+        return view('home');
+    }
+
+    public function sobre()
+    {
+
+        return view('site.sobre');
+    }
+
+    public function contato()
+    {
+
+        return view('site.contato');
+    }
+
+    public function cadernos()
+    {
+
+        // ultimas 5 noticias 
+        $cadernos = Caderno::all();
+
+        return view('site.cadernos', compact('cadernos'));
+    }
+
+
+    public function noticiasPorCaderno($id)
+    {
+
+        $noticias = Noticia::where('caderno_id', $id);
+
+        return view('home', compact('noticias'));
+    }
+
+    public function pesquisarNoticias(Request $request)
+    {
+
+        $termo = $request->search;
+        $noticias = Noticia::where('titulo', 'LIKE', '%' . $termo . '%')->get();
+
+        return view('home', compact('noticias'));
     }
 }
