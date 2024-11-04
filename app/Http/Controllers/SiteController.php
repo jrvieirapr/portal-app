@@ -56,8 +56,8 @@ class SiteController extends Controller
     {
 
         $termo = $request->search;
-        $noticias = Noticia::where('titulo', 'LIKE', '%' . $termo . '%')->get();
+        $noticias = Noticia::where('titulo', 'LIKE', '%' . $termo . '%')->paginate(25);
 
-        return view('home', compact('noticias'));
+        return view('site.noticias', compact('noticias'));
     }
 }
